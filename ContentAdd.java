@@ -27,7 +27,7 @@ public class ContentAdd extends JFrame {
            screen.setFont(font);
            screen.setEditable(false);
            
-    //Borders
+    //Borderssss
         Border Border = BorderFactory.createLineBorder(Color.PINK, 10);
         Border Border2 = BorderFactory.createLineBorder(Color.PINK, 10);
            screen.setBorder(Border);
