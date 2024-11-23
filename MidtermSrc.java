@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
     
-public class ContentAdd extends JFrame {
+public class MidtermSrc extends JFrame {
     
     private JTextArea screen; //here we display screen
     private JPanel btn; // 28 buttons plus added feature
@@ -10,7 +10,7 @@ public class ContentAdd extends JFrame {
     private String operator = "";
     private double firstOperand = 0;
 
-    public ContentAdd () {
+    public MidtermSrc () {
 
 
 
@@ -18,7 +18,7 @@ public class ContentAdd extends JFrame {
     setLayout (new BorderLayout()) ;//for background and stuff layout
     
     
-    Font font = new Font ("Rockwell", Font.BOLD, 30);
+    Font font = new Font ("EmojiOne", Font.BOLD, 30);
     //display window for output
            screen = new JTextArea();
            screen.setPreferredSize(new Dimension(40,100));
@@ -38,8 +38,10 @@ public class ContentAdd extends JFrame {
           
            btn.setBackground(Color.PINK);
            btn.setBorder(Border2);
-           btn.setLayout(new GridLayout(7,4,5,5));
+           btn.setPreferredSize(new Dimension(800,600));
+           btn.setLayout(new GridLayout(10,6,3,3));
            btn.setFont (font);
+          
              
     //function JButton AC to reset the screen
           JButton ac = new JButton ("AC");
@@ -241,6 +243,7 @@ String input = screen.getText();
  }
 });
 
+
 // Operation JButton %
 JButton percent = new JButton ("%");
 btn.add(percent);
@@ -299,10 +302,64 @@ power.addActionListener(e -> {
         screen.setText(text + "^");
     
 });
+//setScreen Editable button for string functions
+JButton editableScreen = new JButton("setSc");
+editableScreen.addActionListener (e-> {
+    FinalsSrc screenBtn = new FinalsSrc(screen);
+    screenBtn.SetScreenEditableBtn();
+});
+btn.add(editableScreen);
 
+//string length buttton
+JButton stringL = new JButton ("Strlen()");
+stringL.addActionListener (e->{
+    FinalsSrc strlen = new FinalsSrc(screen);
+    strlen.StringLenghtbtn();
+});
+btn.add(stringL);
 
+//set n value button
+JButton setN = new JButton ("Set N");
+btn.add (setN);
 
-          //putting function button to calculator
+// set r value button
+JButton setR = new JButton ("Set R");
+btn.add (setR);
+
+//Enque button (Ques)
+JButton enqueue = new JButton ("Enqueue()");
+btn.add (enqueue);
+
+//string concatenate button
+JButton concat = new JButton ("str.concat");
+btn.add (concat);
+
+//Permutation button
+JButton permutation = new JButton ("Permutation");
+btn.add (permutation);
+
+// Combination Button
+JButton combination = new JButton ("Combination");
+btn.add (combination);
+
+//Dequeue button (Ques)
+JButton dequeue = new JButton ("Dequeue()");
+btn.add (dequeue);
+
+//push button (Stack)
+JButton push = new JButton ("Push()");
+btn.add (push);
+
+//pop button (Stack)
+JButton pop = new JButton ("pop()");
+btn.add (pop);
+
+//peek button (Stack)
+JButton peek = new JButton ("peek()");
+btn.add (peek);
+          
+
+//putting function button to calculator
           add(btn,BorderLayout.CENTER);
 
 //coloring buttons
@@ -379,7 +436,7 @@ power.addActionListener(e -> {
           
 
 
-    setSize(600, 600); //no need for frame name we can directly call from parent class
+    setSize(500, 700); //no need for frame name we can directly call from parent class
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // to quit application                           
     setVisible (true); //make our frame visible  
     setResizable(false);              

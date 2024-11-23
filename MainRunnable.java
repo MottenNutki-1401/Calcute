@@ -1,6 +1,6 @@
 import javax.swing.SwingUtilities;
 
-public class AddedFeatures{
+public class MainRunnable{
 
     public static void main (String [] args) {
 
@@ -8,7 +8,7 @@ public class AddedFeatures{
             
             public void run () {
 
-                      new ContentAdd (); 
+                      new MidtermSrc (); 
                          }
                   });
             }
