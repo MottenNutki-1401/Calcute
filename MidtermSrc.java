@@ -332,6 +332,11 @@ btn.add (enqueue);
 
 //string concatenate button
 JButton concat = new JButton ("str.concat");
+concat.addActionListener (e->{
+
+    FinalsSrc concatenate  = new FinalsSrc(screen);
+    concatenate.ConcatenateStringBtn();
+});
 btn.add (concat);
 
 //Permutation button
